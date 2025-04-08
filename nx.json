@@ -1,14 +1,5 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "production": [
-      "default"
-    ],
-    "sharedGlobals": []
-  },
-  "nxCloudId": "67d8c9815c97cf7948b89610"
+  "installation": {
+    "version": "20.6.2"
+  }
 }
