@@ -158,5 +158,9 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
         return s_raffleState;
     }
 
+    function getNumWords() public pure returns (uint256) {
+        return numWords;
+    }
+
     receive() external payable {}
 }
