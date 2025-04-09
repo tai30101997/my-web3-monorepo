@@ -1,7 +1,10 @@
 /** @type import('hardhat/config').HardhatUserConfig */
-
-
-
+// require('@nomicfoundation/hardhat-toolbox');
+// require('@nomicfoundation/hardhat-verify');
+// require('dotenv').config();
+// require('./tasks/block-number');
+// require('hardhat-gas-reporter');
+require("solidity-coverage");
 const SEPOLIA_RPC_URL =
   process.env.SEPOLIA_RPC_URL ||
   "https://eth-sepolia.g.alchemy.com/v2/YOUR-API-KEY"

@@ -1,6 +1,6 @@
 const { network } = require("hardhat");
 const { developmentChains, networkConfig } = require("../helper/helper-hardhat-config");
-
+const { verify } = require("../../utils/verify");
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
@@ -32,6 +32,13 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     log(`Subscription ID: ${subId}`);
     log(`VRFCoordinatorV2_5Mock address: ${VRFCoordinatorV2_5Mock_address}`);
   }
+
+  // Verify the deployment
+  if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+    log("Verifying...")
+    await verify(raffle.address, arguments)
+  }
+
   log("----------------------------------------------------");
   log("Deploying Raffle...");
   log("----------------------------------------------------");
@@ -57,3 +64,4 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
   log("Raffle deployed at:", raffle.address);
 }
+module.exports.tags = ["all", "raffle"]
