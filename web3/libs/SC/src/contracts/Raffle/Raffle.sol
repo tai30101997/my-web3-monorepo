@@ -45,7 +45,6 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     constructor(
         uint256 entranceFee,
         address vrfCoordinator,
-        bytes32 gasLane,
         uint256 subscriptionId,
         bytes32 keyHash,
         uint32 callbackGasLimit,
@@ -53,7 +52,6 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     ) VRFConsumerBaseV2Plus(vrfCoordinator) {
         i_entranceFee = entranceFee;
         i_vrfCoordinator = vrfCoordinator;
-        i_gasLane = gasLane;
         i_subscriptionId = subscriptionId;
         i_keyHash = keyHash;
         i_callbackGasLimit = callbackGasLimit;
@@ -147,7 +145,7 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
                 callbackGasLimit: i_callbackGasLimit,
                 numWords: numWords,
                 extraArgs: VRFV2PlusClient._argsToBytes(
-                    VRFV2PlusClient.ExtraArgsV1({nativePayment: true})
+                    VRFV2PlusClient.ExtraArgsV1({nativePayment: false})
                 )
             })
         );
@@ -160,6 +158,18 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
 
     function getNumWords() public pure returns (uint256) {
         return numWords;
+    }
+
+    function getNumberOfPlayers() public view returns (uint256) {
+        return s_players.length;
+    }
+
+    function getLatestTimestamp() public view returns (uint256) {
+        return s_lastTimeStamp;
+    }
+
+    function getRequestConfirmations() public pure returns (uint256) {
+        return requestConfirmations;
     }
 
     receive() external payable {}
