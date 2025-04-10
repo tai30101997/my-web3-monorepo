@@ -129,3 +129,4 @@ Depending on the frontend setup (e.g. Next.js), this starts the frontend app in 
 - [ ] Add Etherscan verification step
 - [ ] Set up integration tests for contracts
 - [ ] CI/CD pipeline for deploy (GitHub Actions / Vercel)
+

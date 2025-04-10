@@ -33,6 +33,13 @@ module.exports = {
     },
 
   },
+  gasReporter: {
+    enabled: false,
+    currency: "USD",
+    outputFile: "gas-report.txt",
+    noColors: true,
+    // coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+  },
   namedAccounts: {
     deployer: {
       default: 0,
@@ -43,6 +50,9 @@ module.exports = {
     keeper: {
       default: 2,
     },
+  },
+  mocha: {
+    timeout: 200000,
   },
   paths: {
     sources: "./src/contracts",

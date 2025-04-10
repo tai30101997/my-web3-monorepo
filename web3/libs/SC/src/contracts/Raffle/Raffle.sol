@@ -5,6 +5,8 @@
 // Reset the lottery for the next round
 // CHAINLINK ORACLE -> RANDOM NUMBER GENERATOR, AUTO EXECUTE
 
+// ENTER_RAFFLE -> REQUEST_RANDOM_WORD ( USER CALL )--> CHAINLINK_VRF --> FULL_FILL_RANDOM_WORD ( CHAINLINK AUTO CALL ) -> PICK_WINNER_AND_TRANSFER_PRIZE
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
