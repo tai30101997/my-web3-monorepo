@@ -21,29 +21,31 @@ const { ethers, network, getNamedAccounts, deployments } = require("hardhat");
       assert.equal(interval.toString(), networkConfig[chainId]["interval"]);
     });
   })
-  describe("enterRaffle", async function () { })
-  it("reverts when you don't pay enough", async function () {
-    await expect(raffle.enterRaffle()).to.be.revertedWith("Raffle__NotEnoughETHEntered");
-  });
-  it("revert when raffle is calculating", async function () {
-    await raffle.enterRaffle({ value: entranceFee });
-    await expect(raffle.enterRaffle({ value: entranceFee })).to.be.revertedWith("Raffle__RaffleNotOpen");
-  })
-  it("records players when they enter", async function () {
-    await raffle.enterRaffle({ value: entranceFee });
-    const playerFromContract = await raffle.getPlayer(0);
-    assert.equal(playerFromContract, deployer);
-  });
-  it("emits event on enter", async function () {
-    await expect(raffle.enterRaffle({ value: entranceFee })).to.emit(raffle, "RaffleEnter");
-  })
-  it("doesn't allow entrance when raffle is calculating", async function () {
-    await raffle.enterRaffle({ value: entranceFee });
-    await network.provider.send("evm_increaseTime", [interval.toNumber() + 1]);
-    await network.provider.send("evm_mine", []);// just wanna mine the 1 block 
-    // we pretend to be a chainlink keeper
-    await raffle.performUpkeep([]); // this will change the state of the raffle to calculating
-    await expect(raffle.enterRaffle({ value: entranceFee })).to.be.revertedWith("Raffle__RaffleNotOpen");
+
+  describe("enterRaffle", async function () {
+    it("reverts when you don't pay enough", async function () {
+      await expect(raffle.enterRaffle()).to.be.revertedWith("Raffle__NotEnoughETHEntered");
+    });
+    it("revert when raffle is calculating", async function () {
+      await raffle.enterRaffle({ value: entranceFee });
+      await expect(raffle.enterRaffle({ value: entranceFee })).to.be.revertedWith("Raffle__RaffleNotOpen");
+    })
+    it("records players when they enter", async function () {
+      await raffle.enterRaffle({ value: entranceFee });
+      const playerFromContract = await raffle.getPlayer(0);
+      assert.equal(playerFromContract, deployer);
+    });
+    it("emits event on enter", async function () {
+      await expect(raffle.enterRaffle({ value: entranceFee })).to.emit(raffle, "RaffleEnter");
+    })
+    it("doesn't allow entrance when raffle is calculating", async function () {
+      await raffle.enterRaffle({ value: entranceFee });
+      await network.provider.send("evm_increaseTime", [interval.toNumber() + 1]);
+      await network.provider.send("evm_mine", []);// just wanna mine the 1 block 
+      // we pretend to be a chainlink keeper
+      await raffle.performUpkeep([]); // this will change the state of the raffle to calculating
+      await expect(raffle.enterRaffle({ value: entranceFee })).to.be.revertedWith("Raffle__RaffleNotOpen");
+    })
   })
   describe("checkUpKeep", async function () {
 
@@ -88,6 +90,7 @@ const { ethers, network, getNamedAccounts, deployments } = require("hardhat");
       assert(raffleState.toString() == "1");
     })
   });
+
   describe("fulfillRandomWords", async function () {
     beforeEach(async function () {
       await raffle.enterRaffle({ value: entranceFee });
@@ -139,5 +142,5 @@ const { ethers, network, getNamedAccounts, deployments } = require("hardhat");
         })
       });
     })
-  });
+  })
 });
