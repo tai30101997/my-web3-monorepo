@@ -124,9 +124,11 @@ const { ethers, network, getNamedAccounts, deployments } = require("hardhat");
             assert.equal(numPlayers.toString(), "0");
             assert.equal(raffleState.toString(), "0");
             assert(endingTimeStamp > startingTimeStamp);
+            const totalPrize = entranceFee * BigInt(additionalEntrances + 1);
+            const winnerEndingBalance = await accounts[1].getBalance();
             assert.equal(
-              winnerStartingBalance.toString(),
-              winnerStartingBalance.add(entranceFee.mul(additionalEntrances).add(entranceFee)).toString()
+              winnerEndingBalance.toString(),
+              (winnerStartingBalance + totalPrize).toString()
             );
             assert.equal(recentWinner.toString(), accounts[1].address);
 
@@ -137,7 +139,6 @@ const { ethers, network, getNamedAccounts, deployments } = require("hardhat");
 
           const tx = await raffle.performUpkeep([]);
           const txReceipt = await tx.wait(1);
-          const winnerStartingBalance = await accounts[1].getBalance();
           await VRFCoordinatorV2_5Mock.fulfillRandomWords(txReceipt.events[1].args.requestId, raffle.address);
         })
       });
