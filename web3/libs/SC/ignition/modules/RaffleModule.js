@@ -1,7 +1,7 @@
 
 // ignition/modules/RaffleModule.js
 const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
-const MockVRFModule = require("./MockVRFModule");
+const MockVRFModule = require("./MockVRFModule.js");
 
 const RaffleModule = buildModule("RaffleModule", (m) => {
   const { vrfCoordinator, subId } = m.useModule(MockVRFModule);
