@@ -102,7 +102,7 @@ Depending on the frontend setup (e.g. Next.js), this starts the frontend app in 
 | Run contract tests     | `nx run SC:test`               |
 | Clean contracts        | `nx run SC:clean`              |
 | coverage  contracts    | `nx run SC:coverage `          |
-| Run frontend app       | `nx serve fundme`              |
+| Run frontend app       | `npx nx serve fundme`              |
 | Run multiple projects  | `nx run-many --target=build`   |
 
 ---

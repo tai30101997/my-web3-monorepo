@@ -1,0 +1,16 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": "src",
+        "outDir": "dist",
+        "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+        "emitDeclarationOnly": false,
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "forceConsistentCasingInFileNames": true,
+        "types": ["node"]
+    },
+    "include": ["src/**/*.ts", "src/index.ts", "src/lib/MoralisProviderWrapper.ts", "src/lib/MoralisProviderWrapper.ts"],
+    "references": []
+}

@@ -1,13 +1,16 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
-  "files": [],
-  "references": [
-    {
-      "path": "./apps/fundme"
-    },
-    {
-      "path": "./libs"
-    },
-  ]
+    "extends": "./tsconfig.base.json",
+    "compileOnSave": false,
+    "files": [],
+    "references": [
+        {
+            "path": "./apps/fundme"
+        },
+        {
+            "path": "./libs/packages/moralist-wrapper"
+        },
+        {
+            "path": "./libs/SC"
+        }
+    ]
 }

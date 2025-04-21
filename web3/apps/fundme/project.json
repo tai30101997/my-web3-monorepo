@@ -1,0 +1,28 @@
+{
+  "projectType": "application",
+  "root": "apps/fundme",
+  "sourceRoot": "apps/fundme/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "options": {
+        "outputPath": "dist/apps/fundme",
+        "root": "apps/fundme"
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "fundme:build",
+        "dev": true
+      }
+    },
+    "dev": {
+      "executor": "@nx/next:dev-server",
+      "options": {
+        "buildTarget": "fundme:build"
+      }
+    }
+  },
+  "tags": []
+}
