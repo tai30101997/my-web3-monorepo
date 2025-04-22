@@ -9,7 +9,7 @@
     "module": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@web3/moralist-wrapper": ["libs/packages/moralist-wrapper/src/index.ts"]
+      "@web3/moralist-wrapper": ["libs/packages/moralist-wrapper/src"]
     },
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
