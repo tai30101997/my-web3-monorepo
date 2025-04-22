@@ -9,6 +9,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
+
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>
     </html>

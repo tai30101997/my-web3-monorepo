@@ -9,7 +9,7 @@
     "module": "esnext",
     "baseUrl": ".",
     "paths": {
-      "@web3/moralist-wrapper": ["libs/packages/moralist-wrapper/src"]
+      "@web3/moraliswrapper": ["libs/packages/moraliswrapper/src"]
     },
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,

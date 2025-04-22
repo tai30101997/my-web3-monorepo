@@ -1,5 +1,5 @@
 {
-    "name": "@web3/moralis-wrapper",
+    "name": "@web3/moraliswrapper",
     "version": "0.0.1",
     "private": true,
     "type": "module",
@@ -15,7 +15,7 @@
         }
     },
     "nx": {
-        "name": "moralis-wrapper"
+        "name": "moraliswrapper"
     },
     "dependencies": {
         "tslib": "^2.3.0"

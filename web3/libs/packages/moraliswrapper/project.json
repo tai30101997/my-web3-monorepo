@@ -1,0 +1,23 @@
+{
+  "name": "moraliswrapper",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/packages/moraliswrapper/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/packages/moraliswrapper",
+        "main": "libs/packages/moraliswrapper/src/index.ts",
+        "tsConfig": "libs/packages/moraliswrapper/tsconfig.lib.json",
+        "assets": [
+          "libs/packages/moraliswrapper/*.md"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -53,7 +53,6 @@
         }
     ],
     "extends": "nx/presets/core.json",
-    "npmScope": "myorg",
     "targetDefaults": {
         "build": {
             "dependsOn": [
@@ -76,12 +75,28 @@
     },
     "projects": {
         "SC": "libs/SC",
-        "moralist": "libs/packages/moralist-wrapper",
-        "fundme": "apps/fundme"
-    },
-    "workspaceLayout": {
-        "appsDir": "apps",
-        "libsDir": "libs"
+        "moraliswrapper": "libs/packages/moraliswrapper",
+        "fundme": {
+            "root": "apps/fundme",
+            "sourceRoot": "apps/fundme/src",
+            "projectType": "application",
+            "targets": {
+                "build": {
+                    "builder": "@nrwl/next:build",
+                    "options": {
+                        "outputPath": "dist/apps/fundme",
+                        "root": "apps/fundme",
+                        "srcDir": "apps/fundme/src",
+                        "tsConfig": "apps/fundme/tsconfig.app.json",
+                        "assets": [
+                            "apps/fundme/src/favicon.ico",
+                            "apps/fundme/public"
+                        ],
+                        "nextConfig": "apps/fundme/next.config.js"
+                    }
+                }
+            }
+        }
     },
     "pluginsConfig": {
         "@nrwl/js": {

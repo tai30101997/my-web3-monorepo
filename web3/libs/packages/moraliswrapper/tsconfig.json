@@ -16,8 +16,7 @@
         "noFallthroughCasesInSwitch": true,
         "noPropertyAccessFromIndexSignature": true,
         "paths": {
-           "@web3/moralist-wrapper": ["libs/packages/moralist-wrapper/src"]
-           
+           "@web3/moraliswrapper": ["libs/packages/moraliswrapper/src"]
         }
       },
     "nx": {

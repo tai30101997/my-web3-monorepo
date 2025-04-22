@@ -7,7 +7,7 @@
             "path": "./apps/fundme"
         },
         {
-            "path": "./libs/packages/moralist-wrapper"
+            "path": "./libs/packages/moraliswrapper"
         },
         {
             "path": "./libs/SC"
