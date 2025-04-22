@@ -1,8 +1,7 @@
 'use client';
-import { ethers, formatEther, parseEther } from "ethers";
+import { ethers, formatEther } from "ethers";
 import { useEffect, useState } from "react";
-// import { MoralisProviderWrapper } from "@web3/moralist-wrapper";
-
+import { MoralisProviderWrapper } from "@web3/moralist-wrapper";
 const ADDRESS_CONTRACT = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 const appId = "your-moralis-app-id";
 const serverUrl = "your-moralis-server-url";
@@ -32,11 +31,11 @@ function App() {
 
   }
   return (
-    // <MoralisProviderWrapper appId={appId} serverUrl={serverUrl}>
-    <div>
-      <h1>FundMe App</h1>
-      {/* Your app components go here */}
-    </div>
+    <MoralisProviderWrapper appId={appId} serverUrl={serverUrl}>
+      <div>
+        <h1>FundMe App</h1>
+        {/* Your app components go here */}
+      </div>
     // </MoralisProviderWrapper>
   );
 }

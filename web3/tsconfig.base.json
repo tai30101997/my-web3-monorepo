@@ -8,6 +8,10 @@
     "lib": ["es2022"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@web3/moralist-wrapper": ["libs/packages/moralist-wrapper/src/index.ts"]
+    },
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
