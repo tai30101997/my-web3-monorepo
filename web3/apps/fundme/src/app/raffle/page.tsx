@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { MoralisProvider } from "react-moralis";
 import Header from "./header";
+// import { MoralisProviderWrapper } from "@web3/moraliswrapper"
 function App() {
   const [account, setAccount] = useState(null);
   const [balance, setBalance] = useState("0");

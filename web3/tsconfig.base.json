@@ -8,9 +8,6 @@
     "lib": ["es2022"],
     "module": "esnext",
     "baseUrl": ".",
-    "paths": {
-      "@web3/moraliswrapper": ["libs/packages/moraliswrapper/src"]
-    },
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,

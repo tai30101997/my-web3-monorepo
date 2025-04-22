@@ -2,6 +2,9 @@
     "extends": "./tsconfig.base.json",
     "compileOnSave": false,
     "files": [],
+    "paths": {
+        "@web3/moraliswrapper": ["libs/packages/moraliswrapper/src/index.ts"]
+    },
     "references": [
         {
             "path": "./apps/fundme"

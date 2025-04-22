@@ -2,7 +2,7 @@
     "extends": "../../../tsconfig.base.json",
     "compilerOptions": {
         "rootDir": "src",
-        "outDir": "dist",
+        "outDir": "../../../dist/libs/packages/moraliswrapper",
         "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
         "emitDeclarationOnly": false,
         "module": "esnext",
