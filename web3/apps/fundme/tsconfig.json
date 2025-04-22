@@ -5,6 +5,7 @@
     "noEmit": true,
     "emitDeclarationOnly": false,
     "esModuleInterop": true,
+    "declaration": true,
     "resolveJsonModule": true,
     "lib": [
       "dom",
@@ -15,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
+    "types": ["node"],
     "plugins": [
       {
         "name": "next"
@@ -26,7 +28,7 @@
       ]
     },
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": "../../",
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "moduleResolution": "node",
     "baseUrl": "src",

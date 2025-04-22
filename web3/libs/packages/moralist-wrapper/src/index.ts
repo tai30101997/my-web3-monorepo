@@ -1,2 +1,2 @@
-export * from './lib/MoralisProviderWrapper.js';
+export * from './lib/MoralisProviderWrapper';
 export { useMoralis } from "react-moralis";
